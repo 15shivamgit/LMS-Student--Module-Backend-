@@ -6,6 +6,10 @@ from rest_framework.decorators import action
 
 from django.contrib.auth.models import User
 
+from rest_framework_simplejwt.views import TokenObtainPairView
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+
 
 
 from .models import Student, Course, Assignment, Notification
@@ -78,5 +82,7 @@ class NotificationViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 
-
+@method_decorator(csrf_exempt, name='dispatch')
+class MyTokenObtainPairView(TokenObtainPairView):
+    pass
 

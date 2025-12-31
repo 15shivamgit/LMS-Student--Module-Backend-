@@ -104,8 +104,11 @@ SIMPLE_JWT = {
 
 # Frontend ke liye CORS allow
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
-    "https://lms-student-module-frontend.vercel.app"
+    "https://lms-student-module-frontend.vercel.app",
+    "https://*.vercel.app",
+    "https://*.railway.app",
 ]
 
 
