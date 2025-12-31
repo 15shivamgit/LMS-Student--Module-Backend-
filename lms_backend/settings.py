@@ -96,8 +96,11 @@ SIMPLE_JWT = {
 }
 
 
-ALLOWED_HOSTS = ["*"]
-
 # Frontend ke liye CORS allow
 CORS_ALLOW_ALL_ORIGINS = True
 
+
+
+
+#Django administration ->    id   -     yukti|  password -     yukti
+#login ->     id -   15shivambgs@gmail.com  |   password -     admin@123

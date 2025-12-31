@@ -105,10 +105,19 @@ http://127.0.0.1:8000/
 ###----------setup--------
 
 # cd Project/lms/lms-backend
-# python -m venv venv
+#python manage.py runserver
 # venv\Scripts\activate  # Windows
 # pip install -r requirements.txt
 # python manage.py migrate
 # python manage.py createsuperuser
-# python manage.py runserver# LMS-Student--Module
+# python manage.py runserver
+
+
+# LMS-Student--Module
 # LMS-Student--Module-Backend-
+
+#------    lms-student-module-backend-production.up.railway.app
+
+#pip install django-cors-headers
+#python manage.py collectstatic
+
