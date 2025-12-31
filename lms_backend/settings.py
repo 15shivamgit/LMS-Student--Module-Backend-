@@ -95,7 +95,9 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
 
+
+ALLOWED_HOSTS = ["*"]
+
 # Frontend ke liye CORS allow
 CORS_ALLOW_ALL_ORIGINS = True
-
 
