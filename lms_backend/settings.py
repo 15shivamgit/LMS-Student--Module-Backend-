@@ -1,13 +1,18 @@
 from pathlib import Path
 from datetime import timedelta
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'change-this-to-your-secret-key'  # apna random string daal lena
+SECRET_KEY = os.environ.get("SECRET_KEY", "unsafe-secret-key")
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]  # dev ke liye ok, production me change karna
+ALLOWED_HOSTS = [
+    "lms-student-module-backend-production.up.railway.app",
+    "127.0.0.1",
+    "localhost",
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -93,11 +98,15 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "AUTH_HEADER_TYPES": ("Bearer",),
 }
 
 
 # Frontend ke liye CORS allow
 CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = [
+    "https://lms-student-module-frontend.vercel.app"
+]
 
 
 
