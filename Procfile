@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn lms_backend.wsgi
+web: gunicorn lms_backend.wsgi:application --bind 0.0.0.0:$PORT
